@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="assets/ucashLogo.svg"> <!--set icon in title bar-->
+    <script src="https://cdn.tailwindcss.com"></script> <!--tailwindcss cdn-->
+    <style>
+        /* .sidebar.active{
+            width: 300px;
+        } */
+        .toggle{
+            background: rgb(251, 251, 251);
+        }
+        .toggle::before{
+            content:'';
+            position: absolute;
+            top: 25px;
+            left: 12px;
+            width: 26px;
+            height: 3px;
+            border-radius: 3px;
+            background: #0059ff;
+            transform: translateY(-5px);
+            transition: 1s;
+        }
+
+        .toggle::after{
+            content:'';
+            position: absolute;
+            top: 25px;
+            left: 12px;
+            width: 26px;
+            height: 3px;
+            border-radius: 3px;
+            background: #0E49B5;
+            transform: translateY(5px);
+            transition: 1s;
+        }
+        .sidebar.active .toggle::before{
+            transform: translateY(0px) rotate(-405deg);
+        }
+        .sidebar.active .toggle::after{
+            transform: translateY(0px) rotate(225deg);
+        }
+    </style>
+    <title>sidebar</title>
+</head>
+<body>
+    <div class="sidebar duration-700 p-0 h-screen w-[200px] bg-[#0E49B5] text-white shadow-[0_15px_15px_25px_rgba(0,0,0,0.1)] overflow-hidden ">
+        <div class="toggle relative top-10 left-20 flex items-start h-[50px] w-[50px] rounded-full cursor-pointer ">         
+        </div>
+        <ul class="pl-4 my-24">
+            <li class="h-12 w-full p-3 bg-white rounded-l-lg  overflow-hidden">
+                <a href="#" class="fixed flex justify-center align-center">
+                    <span class="icon mr-4 "><ion-icon style="color:#0E49B5" name="home-outline"></ion-icon></span>
+                    <span class="title text-[#0E49B5] h-10">Dashboard</span>
+                </a>
+            </li>
+            <li class="my-10  pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5]">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="arrow-redo-outline"></ion-icon></span>
+                    <span class="title h-10">Entry</span>
+                </a>
+            </li>
+            <li class="my-10  pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5]">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="arrow-undo-outline"></ion-icon></span>
+                    <span class="title h-10">Disbursement</span>
+                </a>
+            </li>
+            <li class="my-10  pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5]">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="stats-chart-outline"></ion-icon></span>
+                    <span class="title h-10">status</span>
+                </a>
+            </li>
+            <li class="my-10  pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5]">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="swap-vertical-outline"></ion-icon></span>
+                    <span class="title h-10">Transaction</span>
+                </a>
+            </li>
+            <li class="my-10  pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5]">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="help-circle-outline"></ion-icon></span>
+                    <span class="title h-10">Help</span>
+                </a>
+            </li>
+            <li class="my-10 pl-6 hover:my-4 hover:h-12 hover:w-full hover:p-3 hover:bg-white hover:rounded-l-lg hover:text-[#0E49B5] ">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title h-10">Settings</span>
+                </a>
+            </li>
+            <li class="py-4 pl-6 absolute bottom-6 flex items-end">
+                <a href="#">
+                    <span class="icon mr-4"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title h-10">Sign out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector('.sidebar');
+        let toggle = document.querySelector('.toggle');
+        toggle.onclick = function(){
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
